@@ -28,7 +28,7 @@ def load_terrain_defines(
                            f"not exists")
         rgb = terrain_type["rgb"]
         terrain_types.append(TerrainType(
-            id=type_id,
+            type_id=type_id,
             name=name,
             rgb=rgb
         ))

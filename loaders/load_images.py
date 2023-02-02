@@ -1,4 +1,8 @@
+from classes.terrains import TerrainPixel
 
 
-def get_map_pattern_from_image() -> None:
-    return None
+def get_map_patterns_from_image(
+
+) -> dict[int, list[int]]:  # { id : [ids], }
+
+    return dict()  # TODO

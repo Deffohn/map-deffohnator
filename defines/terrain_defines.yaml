@@ -5,5 +5,5 @@
   name: stone
   rgb: (128, 128, 128)
 - id: 2
-  name: grass
+  name: sand
   rgb: (255, 238, 5)
