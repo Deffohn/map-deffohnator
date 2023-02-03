@@ -1,7 +1,7 @@
 
 
 class TerrainType:
-    id: int
+    type_id: int
     name: str
     rgb: tuple[int, int, int]
 
@@ -11,15 +11,15 @@ class TerrainType:
             name: str,
             rgb: tuple[int, int, int]
     ):
-        self.id = type_id
+        self.type_id = type_id
         self.name = name
         self.rgb = rgb
 
     def __repr__(self):
-        return f"(id:{self.id}, name: {self.name}, rgb: {self.rgb})"
+        return f"(id:{self.type_id}, name: {self.name}, rgb: {self.rgb})"
 
     def __reduce__(self):
-        return TerrainType, (self.id, self.name, self.rgb)
+        return TerrainType, (self.type_id, self.name, self.rgb)
 
 
 class TerrainPixel:

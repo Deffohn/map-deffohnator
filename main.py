@@ -1,4 +1,5 @@
 from loaders.load_defines import load_terrain_defines
+from loaders.load_images import get_map_patterns_from_image_for_wfc
 from tools import dir_tools
 
 
@@ -7,3 +8,7 @@ if __name__ == '__main__':
 
     terrain_types = load_terrain_defines()
     print("Terrain types:", terrain_types)
+
+    get_map_patterns_from_image_for_wfc(
+        terrain_types=terrain_types,
+    )

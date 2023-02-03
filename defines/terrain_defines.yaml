@@ -1,9 +1,9 @@
 - id: 0
   name: grass
-  rgb: (0, 127, 14)
+  rgb: [0, 127, 14]
 - id: 1
   name: stone
-  rgb: (128, 128, 128)
+  rgb: [128, 128, 128]
 - id: 2
   name: sand
-  rgb: (255, 238, 5)
+  rgb: [255, 238, 5]
