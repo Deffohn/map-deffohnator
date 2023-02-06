@@ -1,6 +1,7 @@
 import random
 
 from loaders.load_defines import load_terrain_defines
+from loaders.load_images import get_map_patterns_from_image_for_wfc
 
 
 def generate_world(
@@ -17,6 +18,10 @@ def generate_world(
         for y_map in range(y_size):
             map_gen[(x_map, y_map)] = terrain_types_by_id.copy()
 
+    map_patterns = get_map_patterns_from_image_for_wfc(
+        terrain_types=terrain_types,
+    )
+
     map_gen = generator(
         map_gen=map_gen
     )
@@ -32,10 +37,10 @@ def generate_world(
 
 
 def generator(
-    map_gen: dict[tuple[int, int], list[int]]
+    map_gen: dict[tuple[int, int], list[int]],
+    map_patterns: dict[int, dict[tuple[int, int], list[int]]],
 ) -> dict[tuple[int, int], list[int]]:
 
-    for map_position, map_terrain_id in map_gen.items():
-        map_gen[map_position] = [random.choice(map_terrain_id)]
 
-    return map_gen
+
+    return

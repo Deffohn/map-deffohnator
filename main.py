@@ -1,6 +1,5 @@
 from image_parser import image_save_to_png
 from loaders.load_defines import load_terrain_defines
-from loaders.load_images import get_map_patterns_from_image_for_wfc
 from tools import dir_tools
 from wfc_generator import generate_world
 
