@@ -35,7 +35,7 @@ def get_wfc_defines(
 def get_map_patterns_from_image_for_wfc(
     terrain_types: list[TerrainType],
     image: str = "pattern_default.png",
-) -> dict[int, dict[tuple[int, int], int]]:  # { id : { prox_coordinates : id, }, }
+) -> dict[int, dict[tuple[int, int], list[int]]]:  # { id : { prox_coordinates : id, }, }
     """
 
     :param terrain_types:
@@ -67,7 +67,7 @@ def get_map_patterns_from_image_for_wfc(
 
     map_patterns: dict[int, dict[tuple[int, int], list[int]]] = dict()
     for terrain_type in range(len(terrain_types)):
-        map_patterns[terrain_type]: dict[tuple[int, int], int] = dict()
+        map_patterns[terrain_type]: dict[tuple[int, int], list[int]] = dict()
 
     prox_coors = get_wfc_defines()
     for y_map in range(height):
@@ -77,7 +77,7 @@ def get_map_patterns_from_image_for_wfc(
                 map_patterns[terrain_id] = dict()
 
             for prox_coordinate in prox_coors:
-                if 0 <= x_map + prox_coordinate[0] < width and 0 <= y_map + prox_coordinate[1] < height :
+                if 0 <= x_map + prox_coordinate[0] < width and 0 <= y_map + prox_coordinate[1] < height:
 
                     if prox_coordinate not in map_patterns[terrain_id].keys():
                         map_patterns[terrain_id][prox_coordinate] = list()
@@ -87,7 +87,5 @@ def get_map_patterns_from_image_for_wfc(
                         map_patterns[terrain_id][prox_coordinate].append(
                             pixels_by_id[x_map + prox_coordinate[0]][y_map + prox_coordinate[1]]
                         )
-
-
 
     return map_patterns
