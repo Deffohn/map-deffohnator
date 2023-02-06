@@ -9,6 +9,6 @@ if __name__ == '__main__':
     terrain_types = load_terrain_defines()
     print("Terrain types:", terrain_types)
 
-    get_map_patterns_from_image_for_wfc(
+    print(get_map_patterns_from_image_for_wfc(
         terrain_types=terrain_types,
-    )
+    ))
